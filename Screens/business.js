@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, Button, Image} from "react-native";
+import { View, Text, Button, Image, ScrollView} from "react-native";
 import SearchComponent from "../Components/search";
+import BusinessProfile from "../Components/businessProfile";
 const BusinessScreen = ()=>{
     return(
         <View style={{ flexDirection: 'column' }}>
@@ -11,6 +12,20 @@ const BusinessScreen = ()=>{
                 style={{ width: 30, height: 30, margin: 10 }}
             />
         </View>
+        <ScrollView>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+            <BusinessProfile/>
+        </ScrollView>
     </View>
     );
 };

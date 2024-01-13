@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Button, Image } from "react-native";
+import { View, Text, Button, Image, ScrollView } from "react-native";
 import SearchComponent from "../Components/search";
-
+import MerchantProfile from "../Components/merchantProfile";
 const MerchantScreen = ()=>{
     return(
         <View style={{ flexDirection: 'column' }}>
@@ -12,6 +12,14 @@ const MerchantScreen = ()=>{
                     style={{ width: 30, height: 30, margin: 10 }}
                 />
             </View>
+            <ScrollView>
+                <MerchantProfile/>
+                <MerchantProfile/>
+                <MerchantProfile/>
+                <MerchantProfile/>
+                <MerchantProfile/>
+                <MerchantProfile/>
+            </ScrollView>
         </View>
     );
 };
