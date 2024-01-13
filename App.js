@@ -100,14 +100,14 @@ const styles = StyleSheet.create({
     borderWidth:3,
     width: 10,
     height: 10,
-    backgroundColor: 'white', // Set the color of the square box
+    backgroundColor: 'white', 
   },
   horizontalLine: {
     height: 3,
-    width: 18, // Set the width to 100% for a horizontal line
-    backgroundColor: 'black', // Set the color of the horizontal line
+    width: 18, 
+    backgroundColor: 'black', 
     margin: 3,
-    borderRadius:30, // Adjust the spacing between the square box and the check mark
+    borderRadius:30, 
   },
   checkMark: {
     fontSize: 12,
