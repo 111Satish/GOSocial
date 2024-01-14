@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <Text>This is Home Screen</Text>
       <Button
         title="Go to Explore Screen"
-        onPress={() => navigation.navigate("Explore", { name: "Jane" })}
+        onPress={() => navigation.navigate("Explore")}
       />
     </View>
   );

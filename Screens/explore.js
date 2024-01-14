@@ -12,14 +12,11 @@ const Tab = createMaterialTopTabNavigator();
 const ExploreScreen = () => {
   const navigation = useNavigation();
   return (
-    
       <Tab.Navigator initialRouteName="Personal">
         <Tab.Screen name="Personal" component={PersonalScreen} />
         <Tab.Screen name="Business" component={BusinessScreen}/>
         <Tab.Screen name="Merchant" component={MerchantScreen}/>
       </Tab.Navigator>
-    
-
   );
 };
 

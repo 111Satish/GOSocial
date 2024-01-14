@@ -1,32 +1,24 @@
 
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-const MerchantProfile = () => {
-    const user = {
-        companyName: 'Car Trails',
-        profilePic: 'https://med.gov.bz/wp-content/uploads/2020/08/dummy-profile-pic.jpg',
-        city: 'Trichy',
-        serviceType: 'Taxi',
-        phoneNumber: 9097983136,
-        joningStatus: 1,
-        locationCoord: [122.444, 111.000],
-        profileScore: 8,
-        bio: 'Hi community! We have great deals for you Check us out !! \n Taxi service',
-    };
+const MerchantProfile = ({ user }) => {
 
     return (
         <View style={styles.container}>
             <View style={{ flexDirection: 'row', }}>
                 <Image source={{ uri: user.profilePic }} style={styles.profilePic} />
                 <View>
-                    <Text style={styles.name}>{user.companyName +' - ' + user.serviceType}</Text>
+                    <Text style={styles.name}>{user.companyName + ' - ' + user.serviceType}</Text>
                     <Text style={styles.detail}>{user.city}</Text>
                     <View style={styles.profileScoreBack}>
                         <View style={[styles.profileScore, { width: user.profileScore * 10 }]} />
                     </View>
                     <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity style={styles.iconContainer}>
+                        <TouchableOpacity style={styles.iconContainer} onPress={() => {
+                            Linking.openURL(`tel:${user.phoneNumber}`);
+
+                        }}>
                             <Feather name='phone-call' size={24} color='white' />
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.iconContainer, { flexDirection: 'row' }]}>
@@ -94,8 +86,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         marginBottom: 10,
     },
-    job:{
-        fontWeight:'bold'
+    job: {
+        fontWeight: 'bold'
     },
     bio: {
         fontSize: 14,

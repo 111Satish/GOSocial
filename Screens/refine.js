@@ -1,15 +1,15 @@
 import React from "react";;
-import { Button, Text, View } from "react-native";
+import { Button, ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const RefineScreen = ()=>{
-    const navigation = useNavigation();
+import Refine from "../Components/refine";
+const RefineScreen = () => {
     return (
-        <View>
-            <Text>This is Refine Screen</Text>
-            <Button title="Go to Explore Screen" onPress={()=> navigation.navigate('Explore')}/>
-            <Button title="Go to Explore Home Screen" onPress={()=> navigation.navigate('Home')}/>
-        </View>
+        <ScrollView>
+            <Refine/>
+        </ScrollView>
+            
+    
     );
 };
 

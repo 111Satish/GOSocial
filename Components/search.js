@@ -11,6 +11,7 @@ const SearchComponent = () => {
 //   const handleSearch = () => {
 //     onSearch(searchText);
  // };
+ //
 
   return (
     <View style={styles.searchContainer}>

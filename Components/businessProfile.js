@@ -1,21 +1,8 @@
 
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 import { Feather } from '@expo/vector-icons';
-const BusinessProfile = () => {
-    const user = {
-        name: 'Aman Singh',
-        profilePic: 'https://med.gov.bz/wp-content/uploads/2020/08/dummy-profile-pic.jpg',
-        city: 'Trichy',
-        job: 'SDE',
-        phoneNumber: 9097983136,
-        joningStatus: 1,
-        connectionStatus: '+ INVITE',
-        locationDist: 15.0,
-        profileScore: 8,
-        experiance: 1,
-        bio: 'Passionate about coding and exploring new technologies.',
-    };
+const BusinessProfile = ({user}) => {
 
     return (
         <View style={styles.container}>
@@ -28,7 +15,10 @@ const BusinessProfile = () => {
                         <View style={[styles.profileScore, { width: user.profileScore * 10 }]} />
                     </View>
                     <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity style={styles.iconContainer}>
+                        <TouchableOpacity style={styles.iconContainer} onPress={() => {
+                            Linking.openURL(`tel:${user.phoneNumber}`);
+
+                        }}>
                             <Feather name='phone-call' size={24} color='white' />
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.iconContainer, { flexDirection: 'row' }]}>

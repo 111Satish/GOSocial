@@ -2,19 +2,8 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-const UserProfile = () => {
-    const user = {
-        name: 'Satish Kumar',
-        profilePic: 'https://med.gov.bz/wp-content/uploads/2020/08/dummy-profile-pic.jpg',
-        city: 'Trichy',
-        occupation: 'Student',
-        connectionStatus: '+ INVITE',
-        distance: '100-200',
-        profileScore: 8,
-        interests: ['Coding', 'Reading', 'Traveling'],
-        bio: 'Passionate about coding and exploring new technologies.',
-    };
-
+const UserProfile = ({user}) => {
+    
     return (
         <View style={styles.container}>
             <View style= {{flexDirection:'row', }}>
@@ -34,7 +23,7 @@ const UserProfile = () => {
 
             <View>
                 
-                <Text style={styles.detail}>{user.interests.join(' | ')}</Text>
+                <Text style={styles.detail}>{user.purpose.join(' | ')}</Text>
                 <Text style={styles.bio}>{user.bio}</Text>
             </View>
 
