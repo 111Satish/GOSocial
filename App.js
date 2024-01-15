@@ -12,7 +12,7 @@ import NotesScreen from './Screens/notes';
 import ProfileScreen from './Screens/profile';
 import RefineScreen from './Screens/refine';
 import ExploreScreen from './Screens/explore';
-
+import BottomTab from './navigation/bottomTab';
 const Drawer = createDrawerNavigator();
 
 
@@ -43,7 +43,7 @@ const App = () => {
           ),
         })}
       >
-        <Drawer.Screen name="Explore" component={ExploreScreen} />
+        <Drawer.Screen name="Bottom" component={BottomTab} />
         <Drawer.Screen 
         name="Refine" 
         component={RefineScreen}
