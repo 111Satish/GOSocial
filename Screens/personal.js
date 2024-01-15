@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, Image, ScrollView, FlatList } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import SearchComponent from "../Components/search";
 import UserProfile from "../Components/userProfile";
+import FloatingButton from "../Components/floatingButton";
 const PersonalScreen = () => {
     // const handleSearch = (searchText) => {
 
@@ -28,7 +29,7 @@ const PersonalScreen = () => {
         connectionStatus: 'Pending',
         distance: '100-200',
         profileScore: 8,
-        purpose:['Coffee', 'Business', 'Friendship'],
+        purpose: ['Coffee', 'Business', 'Friendship'],
         bio: 'Passionate about coding and exploring new technologies.',
     };
 
@@ -39,15 +40,19 @@ const PersonalScreen = () => {
         );
     };
     return (
-        <View style={{ flexDirection: 'column' }}>
+    <View style={{flex:1 }}>
             <View style={{ flexDirection: 'row', margin: 10 }}>
                 <SearchComponent />
-                <Image
-                    source={require('../assets/settingsIcon.png')}
-                    style={{ width: 30, height: 30, margin: 10 }}
-                />
+                <TouchableOpacity>
+                    <Image
+                        source={require('../assets/settingsIcon.png')}
+                        style={{ width: 30, height: 30, margin: 10 }}
+                    />
+                </TouchableOpacity>
             </View>
             <FlatList data={users} renderItem={renderItems} />
+            <FloatingButton />
+
         </View>
 
     );

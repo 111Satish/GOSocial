@@ -3,7 +3,6 @@ import { Button, View, Text, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import NavigationContainer from "@react-navigation/native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-
 import PersonalScreen from "./personal";
 import BusinessScreen from "./business";
 import MerchantScreen from "./merchant";
@@ -18,6 +17,7 @@ const ExploreScreen = () => {
         <Tab.Screen name="Merchant" component={MerchantScreen}/>
       </Tab.Navigator>
   );
+  
 };
 
 const styles = StyleSheet.create({

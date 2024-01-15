@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Button, Image, FlatList } from "react-native";
+import { View, Text, Button, Image, FlatList, TouchableOpacity} from "react-native";
 import SearchComponent from "../Components/search";
 import MerchantProfile from "../Components/merchantProfile";
+import FloatingButton from "../Components/floatingButton";
 const MerchantScreen = ()=>{
     const user1 = {
         companyName: 'Car Trails',
@@ -34,15 +35,18 @@ const MerchantScreen = ()=>{
         )
     }
     return(
-        <View style={{ flexDirection: 'column' }}>
+        <View style={{flex:1,flexDirection: 'column'}}>
             <View style={{ flexDirection: 'row', margin: 10 }}>
                 <SearchComponent />
-                <Image
-                    source={require('../assets/settingsIcon.png')}
-                    style={{ width: 30, height: 30, margin: 10 }}
-                />
+                <TouchableOpacity>
+                    <Image
+                        source={require('../assets/settingsIcon.png')}
+                        style={{ width: 30, height: 30, margin: 10 }}
+                    />
+                </TouchableOpacity>
             </View>
             <FlatList data = {users} renderItem = {renderItems}/>
+            <FloatingButton />
         </View>
     );
 };
