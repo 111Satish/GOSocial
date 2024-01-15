@@ -1,55 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, BackHandler, TouchableOpacity } from 'react-native';
-import * as React from 'react';
+import 'react-native-gesture-handler'
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './Screens/home';
-import ExploreScreen from './Screens/explore';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import CustomDrawerContent from './navigation/drawer';
+import BusinessCardScreen from './Screens/businessCard';
+import DatingScreen from './Screens/dating';
+import JobsScreen from './Screens/jobs';
+import NotesScreen from './Screens/notes';
+import ProfileScreen from './Screens/profile';
 import RefineScreen from './Screens/refine';
+import ExploreScreen from './Screens/explore';
 
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: 'Welcome' }}
-        />
-
-        <Stack.Screen
-          name="Explore"
-          component={ExploreScreen}
-
-          options={({ navigation }) => ({
-            title: null,
-            headerLeft: () => (
-              <TouchableOpacity onPress={()=>navigation.navigate('Home')}>
-              <View style={{ flexDirection: 'row' }}>
-                <View style={leftStyle.container}>
-                  <View style={leftStyle.line} />
-                  <View style={leftStyle.line} />
-                  <View style={[leftStyle.line, leftStyle.halfHeightLine]} />
-                </View>
-                <View style={{ marginLeft: 20 }}>
-                  <Text>Howdy Satish Kumar!!</Text>
-                  <Text>📍 Tiruchirappalli</Text>
-                </View>
-              </View>
-              </TouchableOpacity>
-            ),
-
-
-            headerRight: () => (
-              <TouchableOpacity onPress={()=>navigation.navigate('Refine')}>
+      <Drawer.Navigator
+      
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+        
+        screenOptions={(props)=>({
+          headerRight: () => (
+            <TouchableOpacity onPress={() => props.navigation.navigate('Refine')}>
               <View style={styles.container}>
-                <View style={{flexDirection:'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <View style={styles.squareBox} />
                   <View style={styles.horizontalLine} />
                 </View>
-                <View style={{flexDirection:'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <Text style={styles.checkMark}>✓</Text>
                   <View style={styles.horizontalLine} />
                 </View>
@@ -57,38 +39,35 @@ const App = () => {
                   <Text>Refine</Text>
                 </View>
               </View>
-              </TouchableOpacity>
-            ),
-          })}
+            </TouchableOpacity>
+          ),
+        })}
+      >
+        <Drawer.Screen name="Explore" component={ExploreScreen} />
+        <Drawer.Screen 
+        name="Refine" 
+        component={RefineScreen}
+        options={({navigation}) =>({
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={24} color="black" />
+            </TouchableOpacity>
+          ),
+          headerRight:()=>null
+        })
+        }
         />
-        <Stack.Screen
-          name="Refine"
-          component={RefineScreen} />
-      </Stack.Navigator>
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="Dating" component={DatingScreen} />
+        <Drawer.Screen name="Jobs" component={JobsScreen} />
+        <Drawer.Screen name="Notes" component={NotesScreen} />
+        <Drawer.Screen name="BusinessCard" component={BusinessCardScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };
-const leftStyle = StyleSheet.create({
-  container: {
-    width: 25,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '80%',
-    margin: 2,
-  },
-  line: {
-    width: '100%',
-    height: 3,
-    backgroundColor: 'black',
-    marginVertical: 3,
-    borderRadius: 30,
-  },
-  halfHeightLine: {
-    width: '50%',
-    alignSelf: 'flex-start'
-  },
-});
+
+
 
 const styles = StyleSheet.create({
   container: {
