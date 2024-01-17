@@ -1,7 +1,7 @@
 // SearchComponent.js
 
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
 //import { Feather } from '@expo/vector-icons';
 
 const SearchComponent = () => {
@@ -23,7 +23,7 @@ const SearchComponent = () => {
         // value={searchText}
       />
       <TouchableOpacity style={styles.searchButton}>
-        {/* <Feather name="search" size={20} color="black" /> */}
+        <Image style={styles.icon} source = {require('../assets/icons/search.png')}/>
       </TouchableOpacity>
     </View>
   );
@@ -31,19 +31,24 @@ const SearchComponent = () => {
 
 const styles = StyleSheet.create({
   searchContainer: {
+    borderColor:'#08376C',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#eee',
+    backgroundColor: 'white',
     borderRadius: 45,
     paddingVertical: 2,
-    paddingHorizontal: 25,
+    paddingHorizontal: 15,
     borderWidth:1,
     margin:10,
     width:'75%'
   },
+  icon:{
+    width:30,
+    height:30,
+  },
   input: {
     flex: 1,
-    height: 30,
+    height: 40,
     color: '#333',
   },
   searchButton: {

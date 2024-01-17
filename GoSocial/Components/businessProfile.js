@@ -19,16 +19,15 @@ const BusinessProfile = ({user}) => {
                             Linking.openURL(`tel:${user.phoneNumber}`);
 
                         }}>
-                            {/* <Feather name='phone-call' size={24} color='white' /> */}
+                            <Image style={styles.icon} source = {require('../assets/icons/call.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity style={[styles.iconContainer, { flexDirection: 'row' }]}>
-                            {/* <Feather name='user' size={24} color='white' /> */}
-                            <Text style={{ fontSize: 10, color: 'white' }}>+</Text>
+                        <Image style={styles.icon} source = {require('../assets/icons/addPeople.png')}/>
                         </TouchableOpacity>
                     </View>
                 </View>
                 <TouchableOpacity>
-                    <Text>{user.connectionStatus}</Text>
+                    <Text style={{color:'#0F3D71',}}>{user.connectionStatus}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         padding: 16,
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: 25,
         elevation: 3,
         shadowOffset: { width: 0, height: 2 },
@@ -64,11 +63,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     name: {
+        color:'#0F3D71',
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5,
     },
     detail: {
+        color:'#0F3D71',
         fontSize: 16,
         marginBottom: 3,
     },
@@ -76,25 +77,27 @@ const styles = StyleSheet.create({
         width: 100,
         borderRadius: 40,
         height: 15,
-        backgroundColor: 'red',
+        backgroundColor: '#999',
         margin: 5,
     },
     profileScore: {
         borderRadius: 40,
         height: 15,
-        backgroundColor: 'blue',
+        backgroundColor: '#0F3D71',
         marginBottom: 10,
     },
     job:{
+        color:'#0F3D71',
         fontWeight:'bold'
     },
     bio: {
+        color:'#0F3D71',
         fontSize: 14,
         marginTop: 10,
         textAlign: 'center',
     },
     iconContainer: {
-        backgroundColor: 'black',
+        backgroundColor: '#0F3D71',
         borderRadius: 50,
         width: 40,
         height: 40,
@@ -103,6 +106,10 @@ const styles = StyleSheet.create({
         margin: 10,
         marginLeft: 10,
     },
+    icon:{
+        width:30,
+        height:30,
+    }
 });
 
 export default BusinessProfile;

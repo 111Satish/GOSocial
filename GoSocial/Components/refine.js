@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     label: {
         fontSize: 18,
         marginBottom: 8,
-        color: '#16537e',
+        color:'#0F3D71',
     },
     dropdownButton: {
         alignSelf:'center',
@@ -123,14 +123,14 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: '#fff',
         borderWidth: 1,
-        borderColor: '#16537e',
+        borderColor: '#0F3D71',
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
     },
     dropdownButtonText: {
         width: '90%',
-        color: '#16537e',
+        color: '#0F3D71',
     },
     dropdown: {
         marginTop: 0,
@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
         marginRight: 20,
         width: '100%',
         maxHeight: 200,
-        borderColor: '#16537e',
+        borderColor: '#0F3D71',
         borderWidth: 1,
         borderRadius: 5,
     },
     //   selectedText: {
     //     marginTop: 0,
     //     fontSize: 16,
-    //     color: 'blue',
+    //     color: '#0F3D71',
     //   },
     textAreaContainer: {
         marginTop: 15,
@@ -154,12 +154,12 @@ const styles = StyleSheet.create({
     textArea: {
         alignSelf:'center',
         borderWidth: 1,
-        borderColor: '#16537e',
+        borderColor: '#0F3D71',
         borderRadius: 15,
         padding: 5,
         marginBottom: 16,
         minHeight: 10,
-        color: '#16537e'
+        color: '#0F3D71'
     },
     sliderContainer: {
         marginTop: 10,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     //   horizontalLine: {
     //     width: '80%',
     //     height: 2,
-    //     backgroundColor: 'black',
+    //     backgroundColor: '#0F3D71',
     //     marginVertical: 10,
     //   },
     slider: {
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#16537e',
+        backgroundColor: '#0F3D71',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -200,19 +200,19 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 5,
         borderWidth: 2,
-        borderColor: '#16537e',
+        borderColor: '#0F3D71',
         borderRadius: 20,
     },
     selectedOption: {
-        backgroundColor: '#C6E2FF',
+        backgroundColor: '#0F3D71',
     },
     optionText: {
         fontSize: 16,
-        color: '#16537e',
+        color: '#0F3D71',
     },
     button: {
         marginTop: 20,
-        backgroundColor: '#16537e',
+        backgroundColor: '#0F3D71',
         borderRadius: 30,
         width: '45%',
         height: 35,

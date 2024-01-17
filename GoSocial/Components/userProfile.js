@@ -17,7 +17,7 @@ const UserProfile = ({user}) => {
                     </View>
                 </View>
                 <TouchableOpacity>
-                    <Text>{user.connectionStatus}</Text>
+                    <Text style={{color:'#0F3D71',}}>{user.connectionStatus}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -53,11 +53,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     name: {
+        color:'#0F3D71',
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 5,
     },
     detail: {
+        color:'#0F3D71',
         fontSize: 16,
         marginBottom: 3,
     },
@@ -65,16 +67,17 @@ const styles = StyleSheet.create({
         width: 100,
         borderRadius: 40,
         height: 15,
-        backgroundColor: 'red',
+        backgroundColor: '#999',
         marginBottom: 10,
     },
     profileScore: {
         borderRadius: 40,
         height: 15,
-        backgroundColor: 'blue',
+        backgroundColor: '#0F3D71',
         marginBottom: 10,
     },
     bio: {
+        color:'#0F3D71',
         fontSize: 14,
         marginTop: 10,
         textAlign: 'center',

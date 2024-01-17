@@ -45,7 +45,7 @@ const PersonalScreen = () => {
                 <SearchComponent />
                 <TouchableOpacity>
                     <Image
-                        source={require('../assets/settingsIcon.png')}
+                        source={require('../assets/icons/settings.png')}
                         style={{ width: 30, height: 30, margin: 10 }}
                     />
                 </TouchableOpacity>

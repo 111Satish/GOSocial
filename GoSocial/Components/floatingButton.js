@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Modal } from 'react-native';
-// import { 
-//     Ionicons, 
-//     AntDesign, 
-//     Foundation, 
-//     MaterialCommunityIcons,
-//     FontAwesome,
-//     FontAwesome5,
-// } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, StyleSheet, Modal, Image } from 'react-native';
+//import { Image } from 'react-native-reanimated/lib/typescript/Animated';
+
 const FloatingButton = () => {
     const [isModalVisible, setModalVisible] = useState(false);
     const [isPlusVisible, setPlusVisible] = useState(true);
@@ -20,7 +14,7 @@ const FloatingButton = () => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.floatingButton} onPress={toggleModal}>
-                <Text style={{ fontSize: 30, color: isPlusVisible ? 'white' : 'blue' }}>+</Text>
+                <Text style={{ fontSize: 30, color: isPlusVisible ? 'white' : '#0F3D71' }}>+</Text>
             </TouchableOpacity>
 
             <Modal
@@ -36,54 +30,54 @@ const FloatingButton = () => {
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Dating</Text>
                         <View style={styles.circularIcon}>
-                        {/* <FontAwesome5 name="hand-holding-heart" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/dating.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Matrimony</Text>
                         <View style={styles.circularIcon}>
-                        {/* <MaterialCommunityIcons name="ring" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/ring.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Buy-Sell-Rent</Text>
                         <View style={styles.circularIcon}>
-                        {/* <FontAwesome name="shopping-bag" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/shoppingBag.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Business Cards</Text>
                         <View style={styles.circularIcon}>
-                        {/* <MaterialCommunityIcons name="card-account-details-star" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/businessCard.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Clan Groups</Text>
                         <View style={styles.circularIcon}>
-                        {/* <FontAwesome name="group" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/hash.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Jobs</Text>
                         <View style={styles.circularIcon}>
-                        {/* <MaterialCommunityIcons name="briefcase-search" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/opportunity.png')}/>
                         </View>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.iconContainer} >
                         <Text style={styles.caption}>Notes</Text>
                         <View style={styles.circularIcon}>
-                        {/* <Foundation name="clipboard-pencil" size={24} color="black" /> */}
+                        <Image style={styles.icon} source={require('../assets/icons/notes.png')}/>
                         </View>
                     </TouchableOpacity>
                    
                     <TouchableOpacity style={styles.modalIcon} onPress={toggleModal}>
-                        {/* <Ionicons name="close" size={30} color="white" /> */}
+                    <Image style={styles.icon} source={require('../assets/icons/cross.png')}/>
                     </TouchableOpacity>
                 </View>
             </Modal>
@@ -102,7 +96,12 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         verticalAlign:'middle'
     },
+    icon:{
+        width:30,
+        height:30,
+    },
     caption:{
+        color:'#0F3D71',
         textAlignVertical:'center',
         fontWeight:'bold',
         fontSize:18,
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 30,
-        backgroundColor: 'blue',
+        backgroundColor: '#0F3D71',
         justifyContent: 'center',
         alignItems: 'center',
         elevation: 5,
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'flex-end',
-        paddingBottom: 20,
+        paddingBottom: 70,
         paddingRight: 25,
         backgroundColor:'rgba(255,255,255,0.9)'
     },

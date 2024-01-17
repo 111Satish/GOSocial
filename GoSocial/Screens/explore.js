@@ -11,7 +11,16 @@ const Tab = createMaterialTopTabNavigator();
 const ExploreScreen = () => {
   const navigation = useNavigation();
   return (
-      <Tab.Navigator initialRouteName="Personal">
+      <Tab.Navigator 
+      initialRouteName="Personal"
+      tabBarOptions={{
+        activeTintColor: 'white',
+        inactiveTintColor: 'white',
+        indicatorStyle: { backgroundColor: 'white' },
+        style: { backgroundColor: '#0F3D71' },
+        labelStyle: { fontWeight: 'bold' },
+      }}
+      >
         <Tab.Screen name="Personal" component={PersonalScreen} />
         <Tab.Screen name="Business" component={BusinessScreen}/>
         <Tab.Screen name="Merchant" component={MerchantScreen}/>

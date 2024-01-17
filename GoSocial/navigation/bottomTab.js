@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import { FontAwesome, Fontisto, Entypo, AntDesign } from '@expo/vector-icons'; 
+//import { FontAwesome, Fontisto, Entypo, AntDesign } from '@expo/vector-icons';
+import { Image, StyleSheet } from 'react-native'; 
 import ExploreScreen from '../Screens/explore';
 import ChatScreen from '../Screens/chat';
 import ContactScreen from '../Screens/contacts';
@@ -17,21 +18,21 @@ const BottomTab = () => {
                 tabBarIcon: ({ color, size }) => {
                     let iconName;
 
-                    // if (route.name === 'Network') {
-                    //     return <Entypo name="network" size={24} color="black" />;
-                    // } 
-                    // else if (route.name === 'Explore') {
-                    //     return <Fontisto name="eye" size={24} color="black" />;
-                    // }
-                    // else if(route.name === 'Chat'){
-                    //     return <Entypo name="chat" size={24} color="black" />
-                    // }
-                    // else if(route.name === 'Contacts'){
-                    //     return <AntDesign name="contacts" size={24} color="black" />
-                    // }
-                    // else if(route.name === 'Groups'){
-                    //     return <FontAwesome name="hashtag" size={24} color="black" />
-                    // }
+                    if (route.name === 'Explore') {
+                        return <Image style={styles.icon} source= {require('../assets/icons/eye.png')} />;
+                    } 
+                    else if (route.name === 'Network') {
+                        return <Image style={styles.icon} source= {require('../assets/icons/network.png')} />;
+                    }
+                    else if(route.name === 'Chat'){
+                        return <Image style={styles.icon} source= {require('../assets/icons/chat.png')} />;
+                    }
+                    else if(route.name === 'Contacts'){
+                        return <Image style={styles.icon} source= {require('../assets/icons/contacts.png')} />;
+                    }
+                    else if(route.name === 'Groups'){
+                        return <Image style={styles.icon} source= {require('../assets/icons/hash.png')} />;
+                    }
                 },
                 tabBarLabelStyle:{
                     fontSize:16,
@@ -50,5 +51,12 @@ const BottomTab = () => {
         </Tab.Navigator>
     );
 };
+
+const styles = StyleSheet.create({
+    icon:{
+        width:30,
+        height:30,
+    }
+})
 
 export default BottomTab;
